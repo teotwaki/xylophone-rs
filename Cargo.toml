@@ -3,3 +3,11 @@
 name = "cascade"
 version = "0.0.1"
 authors = ["Sebastian Lauwers <sebastian.lauwers@gmail.com>"]
+
+[dependencies]
+toml = "0.1"
+stainless = "0.0.14"
+
+[dependencies.argparse]
+git = "https://github.com/teotwaki/rust-argparse.git"
+branch = "nightly-peekable"
