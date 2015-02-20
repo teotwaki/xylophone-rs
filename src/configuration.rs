@@ -27,6 +27,8 @@ impl Arguments {
     }
 
     pub fn parse() -> Option<Arguments> {
+        debug!("Parsing arguments");
+
         let mut args = Arguments::new();
 
         {  // this block limits scope of borrows by ap.refer() method
