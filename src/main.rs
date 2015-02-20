@@ -14,5 +14,5 @@ fn main() {
         None => { return }
     };
 
-    println!("{}", args.verbose)
+    println!("{}", args.listen);
 }

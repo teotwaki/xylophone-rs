@@ -12,7 +12,6 @@ use self::argparse::{ArgumentParser, StoreTrue, Store};
 
 // The struct that will contain the configuration
 pub struct Arguments {
-    pub verbose: bool,
     pub listen: String,
     pub config_file: String
 }
@@ -20,7 +19,6 @@ pub struct Arguments {
 impl Arguments {
     pub fn new() -> Arguments {
         Arguments {
-            verbose: false,
             listen: "127.0.0.1".to_string(),
             config_file: "".to_string()
         }
@@ -34,9 +32,6 @@ impl Arguments {
         {  // this block limits scope of borrows by ap.refer() method
             let mut ap = ArgumentParser::new();
             ap.set_description("Cascade is a high-performance VoIP server and IVR.");
-            ap.refer(&mut args.verbose)
-                .add_option(&["-v", "--verbose"], Box::new(StoreTrue),
-                "Be verbose");
             ap.refer(&mut args.listen)
                 .add_option(&["--listen"], Box::new(Store::<String>),
                 "The interface on which to listen to");
@@ -51,10 +46,6 @@ impl Arguments {
                     return None;
                 }
             }
-        }
-
-        if args.verbose {
-            println!("listen is {}", args.listen);
         }
 
         Some(args)
