@@ -1,3 +1,10 @@
+mod configuration;
+
 fn main() {
-    println!("Hello, world!");
+    let args = match configuration::Arguments::parse() {
+        Some(x) => { x }
+        None => { return }
+    };
+
+    println!("{}", args.verbose)
 }
