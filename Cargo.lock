@@ -2,9 +2,10 @@
 name = "cascade"
 version = "0.0.1"
 dependencies = [
- "argparse 0.1.0 (git+https://github.com/teotwaki/rust-argparse.git?branch=nightly-peekable)",
+ "argparse 0.1.0 (git+https://github.com/tailhook/rust-argparse.git?branch=rust-nightly)",
  "env_logger 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "log 0.2.4 (registry+https://github.com/rust-lang/crates.io-index)",
+ "mio 0.2.1 (git+https://github.com/carllerche/mio.git)",
  "stainless 0.0.14 (registry+https://github.com/rust-lang/crates.io-index)",
  "time 0.1.17 (registry+https://github.com/rust-lang/crates.io-index)",
  "toml 0.1.17 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -13,7 +14,17 @@ dependencies = [
 [[package]]
 name = "argparse"
 version = "0.1.0"
-source = "git+https://github.com/teotwaki/rust-argparse.git?branch=nightly-peekable#af3f407f1294343af01e279421c96823bb753302"
+source = "git+https://github.com/tailhook/rust-argparse.git?branch=rust-nightly#19ab6e4f9d1e00dcb3b087d886a97b9eb8ee509e"
+
+[[package]]
+name = "bitflags"
+version = "0.1.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+
+[[package]]
+name = "bytes"
+version = "0.1.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "env_logger"
@@ -21,7 +32,7 @@ version = "0.2.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "log 0.2.4 (registry+https://github.com/rust-lang/crates.io-index)",
- "regex 0.1.14 (registry+https://github.com/rust-lang/crates.io-index)",
+ "regex 0.1.15 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
 [[package]]
@@ -40,13 +51,32 @@ version = "0.2.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
+name = "mio"
+version = "0.2.1"
+source = "git+https://github.com/carllerche/mio.git#aefbc348135f237a9deede12f0978c42a20f7e44"
+dependencies = [
+ "bytes 0.1.2 (registry+https://github.com/rust-lang/crates.io-index)",
+ "log 0.2.4 (registry+https://github.com/rust-lang/crates.io-index)",
+ "nix 0.2.3 (registry+https://github.com/rust-lang/crates.io-index)",
+ "time 0.1.17 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
+name = "nix"
+version = "0.2.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+dependencies = [
+ "bitflags 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
+]
+
+[[package]]
 name = "regex"
-version = "0.1.14"
+version = "0.1.15"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "rustc-serialize"
-version = "0.2.14"
+version = "0.2.15"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
@@ -68,6 +98,6 @@ name = "toml"
 version = "0.1.17"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
- "rustc-serialize 0.2.14 (registry+https://github.com/rust-lang/crates.io-index)",
+ "rustc-serialize 0.2.15 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
 
