@@ -33,10 +33,10 @@ impl Arguments {
             let mut ap = ArgumentParser::new();
             ap.set_description("Cascade is a high-performance VoIP server and IVR.");
             ap.refer(&mut args.listen)
-                .add_option(&["--listen"], Box::new(Store::<String>),
+                .add_option(&["--listen"], Store,
                 "The interface on which to listen to");
             ap.refer(&mut args.config_file)
-                .add_option(&["-c", "--configuration"], Box::new(Store::<String>),
+                .add_option(&["-c", "--configuration"], Store,
                 "The main configuration file");
 
             match ap.parse_args() {
