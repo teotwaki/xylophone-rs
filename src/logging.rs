@@ -1,9 +1,6 @@
 extern crate log;
 extern crate time;
 
-// Setting the exit status
-use std::env;
-
 pub struct TimeStampLogger;
 
 impl log::Log for TimeStampLogger {
