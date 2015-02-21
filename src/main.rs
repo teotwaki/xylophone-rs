@@ -3,6 +3,7 @@ extern crate log;
 
 mod configuration;
 mod logging;
+mod server;
 
 fn main() {
     logging::install_logger();
@@ -13,6 +14,4 @@ fn main() {
         Some(x) => { x }
         None => { return }
     };
-
-    println!("{}", args.listen);
 }
