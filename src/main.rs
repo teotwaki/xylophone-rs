@@ -8,7 +8,7 @@ mod server;
 fn main() {
     logging::install_logger();
 
-    info!("Cascade starting up");
+    info!("Xylophone starting up");
 
     let args = match configuration::Arguments::parse() {
         Some(x) => { x }

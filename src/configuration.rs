@@ -31,7 +31,7 @@ impl Arguments {
 
         {  // this block limits scope of borrows by ap.refer() method
             let mut ap = ArgumentParser::new();
-            ap.set_description("Cascade is a high-performance VoIP server and IVR.");
+            ap.set_description("Xylophone is a high-performance VoIP server and IVR.");
             ap.refer(&mut args.listen)
                 .add_option(&["--listen"], Store,
                 "The interface on which to listen to");

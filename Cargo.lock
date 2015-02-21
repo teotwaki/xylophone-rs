@@ -1,5 +1,5 @@
 [root]
-name = "cascade"
+name = "xylophone"
 version = "0.0.1"
 dependencies = [
  "argparse 0.1.0 (git+https://github.com/tailhook/rust-argparse.git?branch=rust-nightly)",
