@@ -3,7 +3,6 @@ name = "xylophone"
 version = "0.0.1"
 dependencies = [
  "argparse 0.1.0 (git+https://github.com/tailhook/rust-argparse.git?branch=rust-nightly)",
- "env_logger 0.2.2 (registry+https://github.com/rust-lang/crates.io-index)",
  "log 0.2.4 (registry+https://github.com/rust-lang/crates.io-index)",
  "mio 0.2.1 (git+https://github.com/carllerche/mio.git)",
  "stainless 0.0.14 (registry+https://github.com/rust-lang/crates.io-index)",
@@ -25,15 +24,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 name = "bytes"
 version = "0.1.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-
-[[package]]
-name = "env_logger"
-version = "0.2.2"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-dependencies = [
- "log 0.2.4 (registry+https://github.com/rust-lang/crates.io-index)",
- "regex 0.1.15 (registry+https://github.com/rust-lang/crates.io-index)",
-]
 
 [[package]]
 name = "gcc"
@@ -68,11 +58,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 dependencies = [
  "bitflags 0.1.1 (registry+https://github.com/rust-lang/crates.io-index)",
 ]
-
-[[package]]
-name = "regex"
-version = "0.1.15"
-source = "registry+https://github.com/rust-lang/crates.io-index"
 
 [[package]]
 name = "rustc-serialize"
