@@ -1,11 +1,25 @@
 extern crate log;
 extern crate time;
 
+use std::env;
+
 pub struct TimeStampLogger;
 
 impl log::Log for TimeStampLogger {
     fn enabled(&self, level: log::LogLevel, _module: &str) -> bool {
-        true
+        match env::var("XYLOPHONE_LOG") {
+            // if the XYLOPHONE_LOG environment variable is defined
+            Ok(v) => {
+                match v.as_slice() {
+                    "none" => { false }, // don't print anything
+                    "all" => { true }, // print everything
+                    // only print xylophone-generated messages
+                    _ => { _module > "xylophone" }
+                }
+            },
+            // no environment variable, only print xylophone-generated messages
+            Err(_) => { _module > "xylophone" }
+        }
     }
 
     fn log(&self, record: &log::LogRecord) {
