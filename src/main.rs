@@ -14,4 +14,6 @@ fn main() {
         Some(x) => { x }
         None => { return }
     };
+
+	server::build();
 }
